@@ -29,7 +29,6 @@ COPY credentials.sh /
 COPY installserver.sh /
 
 RUN /installserver.sh \
-	&& rm -f /credentials.sh \
 	&& rm -f /installserver.sh
 
 WORKDIR /arma3
