@@ -11,15 +11,9 @@ docker run -it \
 	-v $PWD/params:/arma3/params \
 	-v $PWD/profiles:/profiles \
 	-p 2302-2305:2302-2305/udp \
-	timelf123/arma3:latest
-```
-
-## Sample `credentials.sh` file
-This file supplies your steam login credentials to docker at image build time. It is removed from the image before completion of the build.
-
-```
-echo "STEAM_USERNAME=your_steam_username; \
-	STEAM_PASSWORD=your_steam_password;"
+	-e STEAM_USERNAME='SteamUserName' \
+	-e STEAM_PASSWORD='SteamPassword'
+	preisschild/arma3-server-legacyports:latest
 ```
 
 ## Sample `params` file
