@@ -12,7 +12,7 @@ docker run -it \
 	-v $PWD/profiles:/profiles \
 	-p 2302-2305:2302-2305/udp \
 	-e STEAM_USERNAME='SteamUserName' \
-	-e STEAM_PASSWORD='SteamPassword'
+	-e STEAM_PASSWORD='SteamPassword' \
 	preisschild/arma3-server-legacyports:latest
 ```
 
