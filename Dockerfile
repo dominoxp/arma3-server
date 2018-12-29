@@ -25,7 +25,6 @@ EXPOSE 2303/udp
 EXPOSE 2304/udp
 EXPOSE 2305/udp
 
-COPY credentials.sh /
 COPY installserver.sh /
 
 RUN /installserver.sh \
