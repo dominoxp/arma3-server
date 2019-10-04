@@ -6,12 +6,13 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 #RUN apt-get update && apt-get install -y lib32gcc1 lib32stdc++6 wget net-tools
 RUN dpkg --add-architecture i386; apt-get update;apt-get install -y lib32gcc1 libstdc++6 libstdc++6:i386 libtbb2:i386 libtbb2 wget net-tools binutils libssl1.0.0:i386 libcurl4-openssl-dev:i386
 
-RUN cd /root \
-	&& wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz \
+WORKDIR /steam
+
+RUN wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz \
 	&& tar -zxvf steamcmd_linux.tar.gz \
 	&& rm -f steamcmd_linux.tar.gz
 
-RUN /root/steamcmd.sh +login anonymous +quit
+RUN /steam/steamcmd.sh +login anonymous +quit
 RUN echo 233780 > steam_appid.txt
 
 VOLUME /profiles
