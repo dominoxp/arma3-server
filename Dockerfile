@@ -31,7 +31,10 @@ COPY installserver.sh /
 RUN /installserver.sh \
 	&& rm -f /installserver.sh
 
+RUN useradd -ms /bin/bash arma3server && chown arma3server /arma3 -R
+USER arma3server
+
 WORKDIR /arma3
 
 STOPSIGNAL SIGINT
-CMD ["./arma3server", "-par=params", "-profiles=/profiles"]
+ENTRYPOINT ["./arma3server", "-par=params", "-profiles=/profiles"]
