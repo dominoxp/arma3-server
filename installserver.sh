@@ -7,7 +7,7 @@ if [ $VALIDATE == 1 ]; then
 fi
 
 
-/root/steamcmd.sh +login $STEAM_USERNAME $STEAM_PASSWORD +force_install_dir /arma3 +app_update 233780 -beta legacyports $OPTS +quit
+/root/steamcmd.sh +login $STEAM_USERNAME $STEAM_PASSWORD +force_install_dir /arma3 +app_update 233780 $OPTS +quit
 
 #workaround for server bug
 rm /arma3/steamclient.so
