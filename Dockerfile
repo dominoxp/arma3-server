@@ -31,7 +31,7 @@ COPY installserver.sh /
 RUN /installserver.sh \
 	&& rm -f /installserver.sh
 
-RUN useradd -ms /bin/bash arma3server && chown arma3server /arma3 -R
+RUN useradd -ms /bin/bash arma3server && mkdir /arma3 && chown arma3server /arma3 -R
 USER arma3server
 
 WORKDIR /arma3
